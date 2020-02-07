@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "skills")
     private List<Job> jobs = new ArrayList<>();
 
     @Size(max = 1000)

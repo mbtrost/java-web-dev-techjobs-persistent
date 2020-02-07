@@ -1,21 +1,16 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.validation.constraints.NotBlank;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Job extends AbstractEntity{
 
     @ManyToOne
-    @NotBlank (message = "Employer Required")
     private Employer employer;
 
     @ManyToMany
-    @NotBlank(message = "Skill(s) Required")
-    private List<Skill> skills = new ArrayList<>();
+    private List<Skill> skills;
 
     public Job() {
     }
