@@ -13,3 +13,8 @@ where location = "St. Louis"
 drop table job;
 
 ## Part 4: Test it with SQL
+select name, description
+from skill
+left join job_skills on skill.id = job_skills.skills_id
+where jobs_id is not null
+order by skill.name;
